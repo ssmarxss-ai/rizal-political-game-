@@ -1,50 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rizal Political Archive</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<div class="screen start active">
 
-<body>
+  <h1 id="typingTitle"></h1>
 
-<div id="startScreen" class="screen">
-    <h1 class="title">Rizal: The Political Archive</h1>
-    <p class="subtitle">A Gamified Journey Through Rizal’s Political Legacy</p>
-    <button onclick="startGame()" class="btn">Start Journey</button>
-</div>
-
-<div id="gameScreen" class="screen hidden">
-
-    <div class="top-bar">
-        <div>Score: <span id="score">0</span></div>
-        <div>Time: <span id="timer">60</span></div>
-    </div>
-
-    <div id="questionContainer">
-        <h2 id="question"></h2>
-        <input type="text" id="answerInput" placeholder="Type your answer here...">
-        <button onclick="checkAnswer()" class="btn">Submit</button>
-    </div>
-
-    <div id="chapterContent" class="hidden">
-        <h2 id="chapterTitle"></h2>
-        <p id="chapterText"></p>
-        <button onclick="nextQuestion()" class="btn">Next Chapter</button>
-    </div>
+  <button onclick="startGame()">ENTER THE ARCHIVE</button>
 
 </div>
 
-<div id="failScreen" class="screen hidden">
-    <h1>Time's Up!</h1>
-    <p>Your Score: <span id="finalScore"></span></p>
-    <button onclick="restartGame()" class="btn">Try Again</button>
+<div class="screen game">
+
+  <div class="hud">
+
+    <span>Time: <span id="timer">20</span></span>
+
+    <span>Score: <span id="score">0</span></span>
+
+  </div>
+
+  <h2 id="question"></h2>
+
+  <p id="jumbled"></p>
+
+  <input type="text" id="answer" placeholder="Type answer here">
+
+  <br><br>
+
+  <button onclick="submitAnswer()">Submit</button>
+
+  <p id="feedback"></p>
+
 </div>
 
-<audio id="correctSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-bonus-reached-2065.mp3"></audio>
+<div class="screen chapter">
 
-<script src="script.js"></script>
+  <div class="book">
 
-</body>
-</html>
+    <h1 id="chapterTitle"></h1>
+
+    <div id="chapterContent"></div>
+
+    <button onclick="nextLevel()">Continue</button>
+
+  </div>
+
+</div>
+
+<div class="screen fail">
+
+  <h1>History Remains Locked</h1>
+
+  <p>You ran out of time.</p>
+
+  <button onclick="retryLevel()">Try Again</button>
+
+</div>
+
+<div class="screen complete">
+
+  <h1>Political Archive Unlocked</h1>
+
+  <p>You have completed all 12 levels.</p>
+
+</div>
+
+<canvas id="confetti"></canvas>
+
+<audio id="correctSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"></audio>
