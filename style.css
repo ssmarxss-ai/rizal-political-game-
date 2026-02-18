@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #121212;
+    color: #f4e7c5;
+    text-align: center;
+}
+
+.screen {
+    padding: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #8b5e3c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #a97142;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    font-size: 18px;
+}
